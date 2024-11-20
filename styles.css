@@ -1,11 +1,12 @@
 /* CSS Variables */
 :root {
-    --primary-color: #333; /* Dark text for better readability */
+    --primary-color: #2c2c2c; /* Dark text for better readability */
     --secondary-color: #f0f0f0; /* Light background for contrast */
     --accent-color: #d4af37; /* Gold color for highlights */
     --text-color: #444; /* Softer text color */
-    --background-color: #fff; /* Clean background */
+    --background-color: #ffffff; /* Clean background */
     --section-border-color: #e0e0e0; /* Light grey for section borders */
+    --max-width: 1200px; /* Maximum width for content */
 }
 
 /* Global Styles */
@@ -18,23 +19,12 @@ body {
     padding: 0;
 }
 
-/* Add a border to separate sections */
-section {
-    padding: 4rem 5%;
-    border-bottom: 1px solid var(--section-border-color); /* Line below each section */
-}
-
-/* Remove the border for the last section */
-section:last-of-type {
-    border-bottom: none; /* Prevent border on the last section */
-}
-
 /* Header and Navigation */
 .sticky-header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; /* Full width */
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -45,7 +35,10 @@ section:last-of-type {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 1.2rem 5%; /* Adjusted for consistent spacing */
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto; /* Center the navbar within the header */
 }
 
 .navbar h1 {
@@ -65,6 +58,50 @@ nav a {
 
 nav a:hover {
     color: var(--accent-color);
+    
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 5%; /* Consistent padding for all sections */
+    margin: 2rem auto; /* Center the section and add vertical spacing */
+    max-width: var(--max-width); /* Limit the width to max-width */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: var(--secondary-color);; /* White background for sections */
+}
+
+/* About Section Styles */
+.about {
+    background-color: var(--secondary-color); /* Light background for contrast */
+    
+    
+    
+}
+
+.about h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Consistent font */
+    color: var(--primary-color); /* Primary color for headings */
+    margin-bottom: 1.5rem; /* Space below heading */
+    font-size: 2.5rem; /* Increased font size for prominence */
+    position: relative; /* For decorative underline */
+}
+
+.about h2::after {
+    content: ''; /* Decorative underline effect */
+    display: block;
+    width: 60px; /* Underline width */
+    height: 4px; /* Underline height */
+    background-color: var(--accent-color); /* Use accent color */
+    margin: 0.5rem auto; /* Center the underline */
+    border-radius: 2px; /* Rounded corners for the underline */
+}
+
+.about p {
+    font-size: 1.1rem; /* Slightly larger font size for readability */
+    line-height: 1.8; /* More line height for better readability */
+    color: #555; /* Softer text color */
 }
 
 /* Hero Section */
@@ -78,6 +115,7 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     color: var(--background-color);
+    
 }
 
 .hero-content {
@@ -93,56 +131,32 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
-.book-now {
-    background-color: var(--accent-color);
-    color: var(--background-color);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem; /* Standard size */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s; /* Added transform */
-    border-radius: 5px;
-}
-
-.book-now:hover {
-    background-color: #c19b2e;
-    transform: translateY(-2px); /* Lift effect on hover */
-}
-
-/* Section Styles */
-h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem; /* Consistent size for headers */
-}
-
-/* About Section */
-.about {
-    text-align: center;
-    margin-bottom: 4rem; /* Spacing for clarity */
-}
 
 /* Team Section */
-.team {
-    padding: 50px;
-    background-color: #f8f8f8;
-    border-radius: 10px; /* Rounded corners for modern look */
+.team  h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Consistent font */
+    color: var(--primary-color); /* Primary color for headings */
+    margin-bottom: 1.5rem; /* Space below heading */
+    font-size: 2.5rem; /* Increased font size for prominence */
+    position: relative; /* For decorative underline */
 }
 
-.team h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--primary-color);
+.team h2::after {
+    content: ''; /* Decorative underline effect */
+    display: block;
+    width: 60px; /* Underline width */
+    height: 4px; /* Underline height */
+    background-color: var(--accent-color); /* Use accent color */
+    margin: 0.5rem auto; /* Center the underline */
+    border-radius: 2px; /* Rounded corners for the underline */
 }
 
 .team-member {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: var(--max-width); /* Use max-width variable */
     margin: 0 auto;
     gap: 20px;
 }
@@ -166,22 +180,42 @@ h2 {
     font-size: 1rem;
 }
 
-/* Image Content */
-.image-content {
-    flex: 1;
-    text-align: center;
-}
-
-.image-content img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
 /* Price List Section */
+.price-list{
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    
+}
+
+.price-list  h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Consistent font */
+    color: var(--primary-color); /* Primary color for headings */
+    margin-bottom: 1.5rem; /* Space below heading */
+    font-size: 2.5rem; /* Increased font size for prominence */
+    position: relative; /* For decorative underline */
+}
+
 .price-list .category {
     margin-bottom: 2rem; /* More spacing for clarity */
+}
+
+
+.price-list h2::after {
+    content: ''; /* Decorative underline effect */
+    display: block;
+    width: 60px; /* Underline width */
+    height: 4px; /* Underline height */
+    background-color: var(--accent-color); /* Use accent color */
+    margin: 0.5rem auto; /* Center the underline */
+    border-radius: 2px; /* Rounded corners for the underline */
 }
 
 .price-list table {
@@ -203,16 +237,35 @@ h2 {
 }
 
 /* Schedule Section */
+.schedule  h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Consistent font */
+    color: var(--primary-color); /* Primary color for headings */
+    margin-bottom: 1.5rem; /* Space below heading */
+    font-size: 2.5rem; /* Increased font size for prominence */
+    position: relative; /* For decorative underline */
+}
+
 .schedule {
     font-family: 'Arial', sans-serif;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     text-align: center;
+}
+
+.schedule h2::after {
+    content: ''; /* Decorative underline effect */
+    display: block;
+    width: 60px; /* Underline width */
+    height: 4px; /* Underline height */
+    background-color: var(--accent-color); /* Use accent color */
+    margin: 0.5rem auto; /* Center the underline */
+    border-radius: 2px; /* Rounded corners for the underline */
 }
 
 .schedule h2 {
@@ -246,14 +299,13 @@ h2 {
 }
 
 .schedule li:hover {
-    background-color: #f5f5f5;
+    background-color: var(--secondary-color);;
     transition: background-color 0.3s;
 }
 
 /* Contact Details Section */
 .contact-details {
-    background-color: #e9e9e9;
-    padding: 20px;
+    background-color: var(--secondary-color);;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -289,7 +341,7 @@ footer {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -317,12 +369,9 @@ footer {
         max-width: 100%;
         margin-bottom: 20px;
     }
-}
 
-/* Responsive Schedule */
-@media (max-width: 600px) {
     .schedule {
-        padding: auto; /* Adjust padding for smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 
     .schedule li {
