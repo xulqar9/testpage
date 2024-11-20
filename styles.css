@@ -104,7 +104,8 @@ nav a:hover::after {
 }
 
 .navbar .cta-button:hover {
-    background: white; /* Inverts colors for hover effect */
+    background: white;
+    /* Inverts colors for hover effect */
     color: rgb(0, 0, 0);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -138,7 +139,8 @@ section {
 }
 
 .about h2::after {
-    content: ''; /* Decorative underline effect */
+    content: '';
+    /* Decorative underline effect */
     display: block;
     width: 60px; /* Underline width */
     height: 4px; /* Underline height */
@@ -156,7 +158,7 @@ section {
 /* Hero Section */
 .hero {
     background-image: url('images/hero.jpg');
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     height: 60vh;
     display: flex;
@@ -164,7 +166,7 @@ section {
     justify-content: center;
     text-align: center;
     color: var(--background-color);
-    
+
 }
 
 .hero-content {
@@ -175,6 +177,7 @@ section {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
+
 .hero h1 {
     font-size: 2.5rem; /* Balanced size */
     margin-bottom: 1rem;
@@ -182,7 +185,7 @@ section {
 
 
 /* Team Section */
-.team  h2 {
+.team h2 {
     text-align: center;
     font-family: 'Montserrat', sans-serif; /* Consistent font */
     color: var(--primary-color); /* Primary color for headings */
@@ -230,7 +233,7 @@ section {
 }
 
 /* Price List Section */
-.container  h2 {
+.container h2 {
     text-align: center;
     font-family: 'Montserrat', sans-serif; /* Consistent font */
     color: var(--primary-color); /* Primary color for headings */
@@ -239,7 +242,7 @@ section {
     position: relative; /* For decorative underline */
 }
 
-.container .category{
+.container .category {
     font-family: 'Arial', sans-serif;
     color: #333;
     background-color: var(--background-color);
@@ -249,7 +252,7 @@ section {
     max-width: 800px;
     margin: 20px auto;
     text-align: center;
-    
+
 }
 
 
@@ -263,7 +266,7 @@ section {
     border-radius: 2px; /* Rounded corners for the underline */
 }
 
-.category table  {
+.category table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem; /* Space between tables */
@@ -282,7 +285,7 @@ section {
 }
 
 /* Schedule Section */
-.schedule  h2 {
+.schedule h2 {
     text-align: center;
     font-family: 'Montserrat', sans-serif; /* Consistent font */
     color: var(--primary-color); /* Primary color for headings */
@@ -381,72 +384,230 @@ footer {
 }
 
 /* Responsive Styles */
-@media (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 0.5rem;
     }
 
-    nav {
-        margin-top: 1rem;
+    .logo img {
+        height: 30px;
     }
 
     nav a {
-        display: block;
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 1.5rem var(--mobile-padding);
+    }
+
+    .hero-content {
+        max-width: 95%;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .about h2,
+    .team h2,
+    .container h2,
+    .schedule h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: var(--mobile-font-size);
+    }
+
+    .navbar {
+        padding: 0.3rem;
+    }
+
+    .logo img {
+        height: 25px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    section {
+        padding: 1rem var(--mobile-padding);
+    }
+
+    .hero-content {
+        padding: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .about h2,
+    .team h2,
+    .container h2,
+    .schedule h2 {
+        font-size: 1.5rem;
+    }
+
+    .text-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .category table {
+        font-size: 0.9rem;
+    }
+
+    .schedule li {
+        font-size: 0.9rem;
+    }
+
+    .contact-info,
+    .map {
+        width: 100%;
         margin: 0.5rem 0;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    /* Header and Navigation */
+    .sticky-header {
+        position: sticky;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: var(--mobile-padding);
+    }
+
+    /* Logo */
+    .logo img {
+        height: 40px;
+    }
+
+    /* Navigation Links */
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+        font-size: var(--mobile-font-size);
+    }
+
+    /* Add Button */
+    .navbar .cta-button {
+        margin: 1rem 0 0 0;
+        width: 100%;
+    }
+
+    /* Section Styles */
+    section {
+        padding: 2rem var(--mobile-padding);
+        margin: 1rem auto;
+        border-radius: 10px;
+    }
+
+    /* About Section Styles */
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 50vh;
+    }
+
+    .hero-content {
+        padding: 1rem;
+        max-width: 90%;
     }
 
     .hero h1 {
         font-size: 2rem;
     }
 
-    .team-member {
-        flex-direction: column;
-        text-align: center;
+    /* Team Section */
+    .team h2 {
+        font-size: 2rem;
     }
 
-    .image-content img {
-        max-width: 100%;
-        margin-bottom: 20px;
+    .team-member {
+        flex-direction: column;
+    }
+
+    .text-content {
+        padding: 1rem;
+    }
+
+    .text-content h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Price List Section */
+    .container h2 {
+        font-size: 2rem;
+    }
+
+    .category {
+        padding: 1rem;
+    }
+
+    .category table {
+        font-size: var(--mobile-font-size);
+    }
+
+    .category th,
+    .category td {
+        padding: 0.5rem;
+    }
+
+    /* Schedule Section */
+    .schedule h2 {
+        font-size: 2rem;
     }
 
     .schedule {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 1rem;
     }
 
     .schedule li {
+        font-size: 1rem;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .schedule li span {
-        margin-bottom: 5px;
-    }
-}
-
-@media (max-width: 600px) {
-    .logo {
-        font-size: 1.5rem; /* Reduce logo size for smaller screens */
-    }
-
-    .nav-left,
-    .nav-right {
-        display: none; /* Hide navigation links for mobile, if necessary */
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
+    /* Contact Details Section */
+    .contact-details {
         flex-direction: column;
-        align-items: flex-start;
     }
 
-    nav a {
+    .contact-info,
+    .map {
+        width: 100%;
         margin: 0.5rem 0;
     }
 
-    .navbar .cta-button {
-        margin-top: 1rem;
+    /* Social Icons */
+    .social-icon {
+        font-size: 1.5rem;
+        margin: 0 15px;
     }
+
 }
