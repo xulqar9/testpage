@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sticky header
     const header = document.querySelector('.sticky-header');
     const headerHeight = header.offsetHeight;
-    //let lastScrollTop = 0;
+    let lastScrollTop = 0;
   
     window.addEventListener('scroll', () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
