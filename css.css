@@ -1,0 +1,293 @@
+@media screen and (max-width: 1200px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 1rem 2%;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    section {
+        padding: 3rem 4%;
+    }
+
+    .team-member {
+        gap: 15px;
+    }
+
+    .text-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .category table {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .navbar {
+        display:flex;
+        justify-content: space-between;
+        padding: 1rem 2%;
+    }
+
+
+    nav a {
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+    }
+
+    .hero {
+        height: 50vh;
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    section {
+        padding: 2.5rem 5%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .text-content {
+        font-size: 1rem;
+    }
+
+    .contact-info,
+    .map {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display:flex;
+        justify-content: space-between;
+        padding: 1rem 2%;
+    }
+
+
+    nav a {
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+    }
+
+    .cta-button {
+        width: 90%;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .hero {
+        height: 45vh;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 2rem 3%;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .team-member {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .category table {
+        font-size: 0.9rem;
+    }
+
+    .schedule li {
+        flex-direction: column;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    .logo img {
+        height: 25px;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        margin: 0.4rem 0;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 1.5rem 2%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .text-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .team-member {
+        flex-direction: column;
+    }
+
+    .category table {
+        font-size: 0.85rem;
+    }
+
+    .schedule li {
+        font-size: 0.9rem;
+    }
+
+    .contact-info,
+    .map {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .social-icon {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 375px) {
+    body {
+        font-size: 13px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    .logo img {
+        height: 25px;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        margin: 0.4rem 0;
+    }
+
+    .cta-button {
+        font-size: 0.85rem;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .hero {
+        height: 35vh;
+        padding: 1rem 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero-content {
+        padding: 0.5rem;
+    }
+
+    section {
+        padding: 1rem 2%;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .text-content {
+        font-size: 0.85rem;
+    }
+
+    .text-content h3 {
+        font-size: 1rem;
+    }
+
+    .team-member {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .category table {
+        font-size: 0.75rem;
+    }
+
+    .schedule li {
+        flex-direction: column;
+        font-size: 0.85rem;
+        align-items: flex-start;
+    }
+
+    .contact-info,
+    .map {
+        flex: 1 1 100%;
+        padding: 1rem;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .social-icon {
+        font-size: 1rem;
+        margin: 0.5rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+        width: 101%;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}

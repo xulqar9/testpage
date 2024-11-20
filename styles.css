@@ -1,18 +1,17 @@
 /* CSS Variables */
 :root {
-    --primary-color: #000000; /* Dark text for better readability */
-    --secondary-color: #ededed; /* Light background for contrast */
-    --accent-color: #d6b268; /* Gold color for highlights */
-    --text-color: #242424; /* Softer text color */
+    --primary-color: #000000;
+    --secondary-color: #ededed;
+    --accent-color: #d6b268;
+    --text-color: #242424;
     --background-color: #ffffff;
-    --section-border-color: #000000; /* Light grey for section borders */
-    --max-width: 1200px; /* Maximum width for content */
+    --max-width: 1200px;
 }
 
 /* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--text-color);
     background-color: var(--background-color);
     margin: 0;
@@ -24,52 +23,57 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Full width */
-    background-color:var(--primary-color); /* Matches the logo background */
+    width: 100%;
+    background-color: var(--primary-color);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    transition: all 0.3s ease;
-    border-bottom: 2px solid var(--accent-color); /* Reflects the gold accent */
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 5%; /* Balanced spacing */
-    width: 90%;
-    max-width: var(--max-width);
-    margin: 0 auto; /* Center the navbar */
-    font-family: 'Playfair Display', serif; /* Elegant font to match the logo */
+    padding: 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon {
+    margin-left: 10px;
 }
 
 /* Logo */
 .logo img {
-    height: 60px;
-    width: auto;
-    display: block;
-    transition: transform 0.3s ease;
+    height: 50px;
+
 }
 
 .logo img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
 }
 
 /* Navigation Links */
 nav a {
-    color: white; /* White for contrast on black background */
+    color: white;
+    /* White for contrast on black background */
     text-decoration: none;
     margin-left: 1.5rem;
     font-weight: 500;
     font-size: 1rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.10px;
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--accent-color); /* Matches the gold accent in the logo */
-    transform: scale(1.05); /* Subtle scaling effect */
+    color: var(--accent-color);
+    /* Matches the gold accent in the logo */
+    transform: scale(1.05);
+    /* Subtle scaling effect */
 }
 
 /* Underline Effect */
@@ -78,7 +82,8 @@ nav a::after {
     position: absolute;
     width: 0;
     height: 2px;
-    background: var(--accent-color); /* Matches the gold accent */
+    background: var(--accent-color);
+    /* Matches the gold accent */
     bottom: -4px;
     left: 50%;
     transform: translateX(-50%);
@@ -86,15 +91,18 @@ nav a::after {
 }
 
 nav a:hover::after {
-    width: 100%; /* Expands underline on hover */
+    width: 100%;
+    /* Expands underline on hover */
 }
 
 /* Add Button (optional) */
 .navbar .cta-button {
     padding: 0.6rem 1.5rem;
     margin-left: 1.5rem;
-    background: var(--accent-color); /* Matches the logo accent */
-    color: black; /* Contrast for visibility */
+    background: var(--accent-color);
+    /* Matches the logo accent */
+    color: black;
+    /* Contrast for visibility */
     font-weight: 600;
     border-radius: 5px;
     border: none;
@@ -113,46 +121,67 @@ nav a:hover::after {
 
 /* Section Styles */
 section {
-    padding: 4rem 5%; /* Consistent padding for all sections */
-    margin: 2rem auto; /* Center the section and add vertical spacing */
-    max-width: var(--max-width); /* Limit the width to max-width */
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    background-color: var(--secondary-color);; /* White background for sections */
+    padding: 4rem 5%;
+    /* Consistent padding for all sections */
+    margin: 2rem auto;
+    /* Center the section and add vertical spacing */
+    max-width: var(--max-width);
+    /* Limit the width to max-width */
+    border-radius: 20px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    background-color: var(--secondary-color);
+    ;
+    /* White background for sections */
 }
 
 /* About Section Styles */
 .about {
-    background-color: var(--secondary-color); /* Light background for contrast */
-    
-    
-    
+    background-color: var(--secondary-color);
+    /* Light background for contrast */
+
+
+
 }
 
 .about h2 {
     text-align: center;
-    font-family: 'Montserrat', sans-serif; /* Consistent font */
-    color: var(--primary-color); /* Primary color for headings */
-    margin-bottom: 1.5rem; /* Space below heading */
-    font-size: 2.5rem; /* Increased font size for prominence */
-    position: relative; /* For decorative underline */
+    font-family: 'Montserrat', sans-serif;
+    /* Consistent font */
+    color: var(--primary-color);
+    /* Primary color for headings */
+    margin-bottom: 1.5rem;
+    /* Space below heading */
+    font-size: 2.5rem;
+    /* Increased font size for prominence */
+    position: relative;
+    /* For decorative underline */
 }
 
 .about h2::after {
     content: '';
     /* Decorative underline effect */
     display: block;
-    width: 60px; /* Underline width */
-    height: 4px; /* Underline height */
-    background-color: var(--accent-color); /* Use accent color */
-    margin: 0.5rem auto; /* Center the underline */
-    border-radius: 2px; /* Rounded corners for the underline */
+    width: 60px;
+    /* Underline width */
+    height: 4px;
+    /* Underline height */
+    background-color: var(--accent-color);
+    /* Use accent color */
+    margin: 0.5rem auto;
+    /* Center the underline */
+    border-radius: 2px;
+    /* Rounded corners for the underline */
 }
 
 .about p {
-    font-size: 1.1rem; /* Slightly larger font size for readability */
-    line-height: 1.8; /* More line height for better readability */
-    color: #555; /* Softer text color */
+    font-size: 1.1rem;
+    /* Slightly larger font size for readability */
+    line-height: 1.8;
+    /* More line height for better readability */
+    color: #555;
+    /* Softer text color */
 }
 
 /* Hero Section */
@@ -174,12 +203,14 @@ section {
     padding: 2rem;
     border-radius: 10px;
     max-width: 600px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for depth */
 }
 
 
 .hero h1 {
-    font-size: 2.5rem; /* Balanced size */
+    font-size: 2.5rem;
+    /* Balanced size */
     margin-bottom: 1rem;
 }
 
@@ -187,28 +218,40 @@ section {
 /* Team Section */
 .team h2 {
     text-align: center;
-    font-family: 'Montserrat', sans-serif; /* Consistent font */
-    color: var(--primary-color); /* Primary color for headings */
-    margin-bottom: 1.5rem; /* Space below heading */
-    font-size: 2.5rem; /* Increased font size for prominence */
-    position: relative; /* For decorative underline */
+    font-family: 'Montserrat', sans-serif;
+    /* Consistent font */
+    color: var(--primary-color);
+    /* Primary color for headings */
+    margin-bottom: 1.5rem;
+    /* Space below heading */
+    font-size: 2.5rem;
+    /* Increased font size for prominence */
+    position: relative;
+    /* For decorative underline */
 }
 
 .team h2::after {
-    content: ''; /* Decorative underline effect */
+    content: '';
+    /* Decorative underline effect */
     display: block;
-    width: 60px; /* Underline width */
-    height: 4px; /* Underline height */
-    background-color: var(--accent-color); /* Use accent color */
-    margin: 0.5rem auto; /* Center the underline */
-    border-radius: 2px; /* Rounded corners for the underline */
+    width: 60px;
+    /* Underline width */
+    height: 4px;
+    /* Underline height */
+    background-color: var(--accent-color);
+    /* Use accent color */
+    margin: 0.5rem auto;
+    /* Center the underline */
+    border-radius: 2px;
+    /* Rounded corners for the underline */
 }
 
 .team-member {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: var(--max-width); /* Use max-width variable */
+    max-width: var(--max-width);
+    /* Use max-width variable */
     margin: 0 auto;
     gap: 20px;
 }
@@ -235,11 +278,16 @@ section {
 /* Price List Section */
 .container h2 {
     text-align: center;
-    font-family: 'Montserrat', sans-serif; /* Consistent font */
-    color: var(--primary-color); /* Primary color for headings */
-    margin-bottom: 1.5rem; /* Space below heading */
-    font-size: 2.5rem; /* Increased font size for prominence */
-    position: relative; /* For decorative underline */
+    font-family: 'Montserrat', sans-serif;
+    /* Consistent font */
+    color: var(--primary-color);
+    /* Primary color for headings */
+    margin-bottom: 1.5rem;
+    /* Space below heading */
+    font-size: 2.5rem;
+    /* Increased font size for prominence */
+    position: relative;
+    /* For decorative underline */
 }
 
 .container .category {
@@ -257,19 +305,26 @@ section {
 
 
 .container h2::after {
-    content: ''; /* Decorative underline effect */
+    content: '';
+    /* Decorative underline effect */
     display: block;
-    width: 60px; /* Underline width */
-    height: 4px; /* Underline height */
-    background-color: var(--accent-color); /* Use accent color */
-    margin: 0.5rem auto; /* Center the underline */
-    border-radius: 2px; /* Rounded corners for the underline */
+    width: 60px;
+    /* Underline width */
+    height: 4px;
+    /* Underline height */
+    background-color: var(--accent-color);
+    /* Use accent color */
+    margin: 0.5rem auto;
+    /* Center the underline */
+    border-radius: 2px;
+    /* Rounded corners for the underline */
 }
 
 .category table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 2rem; /* Space between tables */
+    margin-bottom: 2rem;
+    /* Space between tables */
 }
 
 .category th,
@@ -287,11 +342,16 @@ section {
 /* Schedule Section */
 .schedule h2 {
     text-align: center;
-    font-family: 'Montserrat', sans-serif; /* Consistent font */
-    color: var(--primary-color); /* Primary color for headings */
-    margin-bottom: 1.5rem; /* Space below heading */
-    font-size: 2.5rem; /* Increased font size for prominence */
-    position: relative; /* For decorative underline */
+    font-family: 'Montserrat', sans-serif;
+    /* Consistent font */
+    color: var(--primary-color);
+    /* Primary color for headings */
+    margin-bottom: 1.5rem;
+    /* Space below heading */
+    font-size: 2.5rem;
+    /* Increased font size for prominence */
+    position: relative;
+    /* For decorative underline */
 }
 
 .schedule {
@@ -307,13 +367,19 @@ section {
 }
 
 .schedule h2::after {
-    content: ''; /* Decorative underline effect */
+    content: '';
+    /* Decorative underline effect */
     display: block;
-    width: 60px; /* Underline width */
-    height: 4px; /* Underline height */
-    background-color: var(--accent-color); /* Use accent color */
-    margin: 0.5rem auto; /* Center the underline */
-    border-radius: 2px; /* Rounded corners for the underline */
+    width: 60px;
+    /* Underline width */
+    height: 4px;
+    /* Underline height */
+    background-color: var(--accent-color);
+    /* Use accent color */
+    margin: 0.5rem auto;
+    /* Center the underline */
+    border-radius: 2px;
+    /* Rounded corners for the underline */
 }
 
 
@@ -342,23 +408,27 @@ section {
 }
 
 .schedule li:hover {
-    background-color: var(--secondary-color);;
+    background-color: var(--secondary-color);
+    ;
     transition: background-color 0.3s;
 }
 
 /* Contact Details Section */
 .contact-details {
-    background-color: var(--secondary-color);;
+    background-color: var(--secondary-color);
+    ;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     border-radius: 10px; /* Rounded corners */
 }
 
-.contact-info, .map {
+.contact-info,
+.map {
     flex: 1;
     min-width: 300px;
-    margin: 10px; /* Spacing between contact info and map */
+    margin: 10px;
+    /* Spacing between contact info and map */
 }
 
 /* Social Icons */
@@ -367,247 +437,137 @@ section {
     margin: 0 10px;
     font-size: 1.2rem;
     color: var(--accent-color);
-    transition: color 0.3s ease, transform 0.3s; /* Added transform for hover */
+    transition: color 0.3s ease, transform 0.3s;
+    /* Added transform for hover */
 }
 
 .social-icon:hover {
     color: var(--accent-color);
-    transform: scale(1.2); /* Slightly enlarge the icon */
+    transform: scale(1.2);
+    /* Slightly enlarge the icon */
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 629px) {
+    /* General Layout */
+    body {
+        font-size: 14px; /* Adjust base font size */
+        line-height: 1.4; /* Tweak line height for better readability */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack navigation vertically */
+        padding: 0.5rem;
+    }
+
+    .nav-links {
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 0.8rem; /* Reduce font size */
+        margin-left: 0.5rem;
+        margin-right: 0.5rem; /* Add breathing space for links */
+    }
+
+    .cta-button {
+        margin: 0.5rem auto; /* Center button */
+        padding: 0.5rem 1rem; /* Adjust padding */
+        font-size: 0.9rem; /* Adjust button text size */
+    }
+
+    .hero {
+        height: 50vh; /* Reduce hero section height */
+        background-position: top;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Smaller heading */
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+        max-width: 90%; /* Allow more space on smaller screens */
+    }
+
+    section {
+        padding: 2rem 5%;
+        box-shadow: none; /* Simplify for smaller screens */
+    }
+
+    h2 {
+        font-size: 2rem; /* Smaller headings */
+    }
+
+    .team-member {
+        flex-direction: column; /* Stack team members */
+        gap: 10px;
+    }
+
+    .text-content {
+        padding: 10px;
+    }
+
+    .category,
+    .schedule {
+        max-width: 100%; /* Use full width */
+        margin: 10px 0; /* Reduce margins */
+    }
+
+    .category table,
+    .schedule ul {
+        font-size: 0.9rem; /* Adjust text size in lists and tables */
+    }
+
+    footer {
+        font-size: 0.8rem; /* Reduce footer text size */
+        padding: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 483px) {
+
+    nav a {
+        font-size: 0.5rem; /* Reduce font size */
+        margin-left: 0.5rem;
+        margin-right: 0.5rem; /* Add breathing space for links */
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .about p,
+    .text-content p {
+        font-size: 0.9rem; /* Smaller paragraph text */
+    }
+
+    .cta-button {
+        font-size: 0.8rem; /* Compact button size */
+        padding: 0.4rem 0.8rem;
+    }
+
+    .contact-info,
+    .map {
+        flex: 1 0 100%; /* Full-width stacking */
+        margin: 5px 0; /* Adjust margins */
+    }
+}
+
+
 /* Footer */
+
 footer {
     background-color: var(--primary-color);
     color: var(--background-color);
     text-align: center;
     padding: 1rem;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .navbar {
-        padding: 0.5rem;
-    }
-
-    .logo img {
-        height: 30px;
-    }
-
-    nav a {
-        font-size: 0.9rem;
-    }
-
-    section {
-        padding: 1.5rem var(--mobile-padding);
-    }
-
-    .hero-content {
-        max-width: 95%;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .about h2,
-    .team h2,
-    .container h2,
-    .schedule h2 {
-        font-size: 1.8rem;
-    }
-
-    .text-content h3 {
-        font-size: 1.3rem;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    body {
-        font-size: var(--mobile-font-size);
-    }
-
-    .navbar {
-        padding: 0.3rem;
-    }
-
-    .logo img {
-        height: 25px;
-    }
-
-    nav a {
-        font-size: 0.8rem;
-    }
-
-    section {
-        padding: 1rem var(--mobile-padding);
-    }
-
-    .hero-content {
-        padding: 0.8rem;
-    }
-
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
-    .about h2,
-    .team h2,
-    .container h2,
-    .schedule h2 {
-        font-size: 1.5rem;
-    }
-
-    .text-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .category table {
-        font-size: 0.9rem;
-    }
-
-    .schedule li {
-        font-size: 0.9rem;
-    }
-
-    .contact-info,
-    .map {
-        width: 100%;
-        margin: 0.5rem 0;
-    }
-
-    body {
-        font-size: 16px;
-    }
-
-    /* Header and Navigation */
-    .sticky-header {
-        position: sticky;
-    }
-
-    .navbar {
-        flex-direction: column;
-        padding: var(--mobile-padding);
-    }
-
-    /* Logo */
-    .logo img {
-        height: 40px;
-    }
-
-    /* Navigation Links */
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    nav a {
-        margin: 0.5rem 0;
-        font-size: var(--mobile-font-size);
-    }
-
-    /* Add Button */
-    .navbar .cta-button {
-        margin: 1rem 0 0 0;
-        width: 100%;
-    }
-
-    /* Section Styles */
-    section {
-        padding: 2rem var(--mobile-padding);
-        margin: 1rem auto;
-        border-radius: 10px;
-    }
-
-    /* About Section Styles */
-    .about h2 {
-        font-size: 2rem;
-    }
-
-    .about p {
-        font-size: 1rem;
-    }
-
-    /* Hero Section */
-    .hero {
-        height: 50vh;
-    }
-
-    .hero-content {
-        padding: 1rem;
-        max-width: 90%;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    /* Team Section */
-    .team h2 {
-        font-size: 2rem;
-    }
-
-    .team-member {
-        flex-direction: column;
-    }
-
-    .text-content {
-        padding: 1rem;
-    }
-
-    .text-content h3 {
-        font-size: 1.5rem;
-    }
-
-    /* Price List Section */
-    .container h2 {
-        font-size: 2rem;
-    }
-
-    .category {
-        padding: 1rem;
-    }
-
-    .category table {
-        font-size: var(--mobile-font-size);
-    }
-
-    .category th,
-    .category td {
-        padding: 0.5rem;
-    }
-
-    /* Schedule Section */
-    .schedule h2 {
-        font-size: 2rem;
-    }
-
-    .schedule {
-        padding: 1rem;
-    }
-
-    .schedule li {
-        font-size: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* Contact Details Section */
-    .contact-details {
-        flex-direction: column;
-    }
-
-    .contact-info,
-    .map {
-        width: 100%;
-        margin: 0.5rem 0;
-    }
-
-    /* Social Icons */
-    .social-icon {
-        font-size: 1.5rem;
-        margin: 0 15px;
-    }
-
 }
