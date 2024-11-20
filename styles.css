@@ -5,7 +5,14 @@
     --accent-color: #d6b268;
     --text-color: #242424;
     --background-color: #ffffff;
+
+    /* Layout */
     --max-width: 1200px;
+  
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
 }
 
 /* Global Styles */
@@ -47,8 +54,9 @@ body {
 
 /* Logo */
 .logo img {
-    height: 50px;
-
+    position: static; /* Ensure no pseudo-element overlaps */
+    display: inline-block; /* Restrict logo to its own space */
+    height: 50px; /* Adjust based on your design */
 }
 
 .logo img:hover {
@@ -68,8 +76,9 @@ nav a {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-nav a.active {
-    color: var(--accent-color); /* Highlight color for active link */
+nav a.active, 
+nav a:hover {
+    color: var(--accent-color); /* Highlight color for active or hover */
 }
 
 nav a.active::after, 
@@ -211,34 +220,23 @@ section {
 
 
 /* Team Section */
-.team h2 {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    /* Consistent font */
-    color: var(--primary-color);
-    /* Primary color for headings */
-    margin-bottom: 1.5rem;
-    /* Space below heading */
-    font-size: 2.5rem;
-    /* Increased font size for prominence */
-    position: relative;
-    /* For decorative underline */
+.section-heading {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  position: relative;
 }
 
-.team h2::after {
-    content: '';
-    /* Decorative underline effect */
-    display: block;
-    width: 60px;
-    /* Underline width */
-    height: 4px;
-    /* Underline height */
-    background-color: var(--accent-color);
-    /* Use accent color */
-    margin: 0.5rem auto;
-    /* Center the underline */
-    border-radius: 2px;
-    /* Rounded corners for the underline */
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 0.5rem auto;
+  border-radius: 2px;
 }
 
 .team-member {

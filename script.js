@@ -1,66 +1,78 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+document.addEventListener('DOMContentLoaded', initializeApp);
+
+function initializeApp() {
+  setupScrolling();
+  setupNavigation();
+  setupAnimations();
+}
+
+function setupScrolling() {
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
       });
-    });
-  
-    // Sticky header
-    const header = document.querySelector('.sticky-header');
-    const headerHeight = header.offsetHeight;
-    let lastScrollTop = 0;
-  
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  
-      if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
-        header.style.transform = `translateY(-${headerHeight}px)`;
-      } else {
-        header.style.transform = 'translateY(0)';
-      }
-  
-      lastScrollTop = scrollTop;
-    });
-  
-    // Fade-in animation for sections
-    const sections = document.querySelectorAll('section');
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-  
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-  
-    sections.forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(20px)';
-      section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(section);
-    });
-  
-    // Form validation for booking
-    const bookNowButton = document.querySelector('.book-now');
-    bookNowButton.addEventListener('click', () => {
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });        
-        
-      alert('Booking functionality coming soon!');
     });
   });
+
+  // Sticky header
+  const header = document.querySelector('.sticky-header');
+  const headerHeight = header.offsetHeight;
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
+      header.style.transform = `translateY(-${headerHeight}px)`;
+    } else {
+      header.style.transform = 'translateY(0)';
+    }
+
+    lastScrollTop = scrollTop;
+  });
+}
+
+function setupNavigation() {
+  // Form validation for booking
+  const bookNowButton = document.querySelector('.book-now');
+  bookNowButton.addEventListener('click', () => {
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });        
+      
+    alert('Booking functionality coming soon!');
+  });
+}
+
+function setupAnimations() {
+  // Fade-in animation for sections
+  const sections = document.querySelectorAll('section');
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(section);
+  });
+}
 
 
 // JavaScript for scrolling effect
@@ -109,8 +121,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Run on scroll
-  window.addEventListener('scroll', updateActiveLink);
+  const debounce = (fn, delay) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => fn(...args), delay);
+    };
+  };
+
+  const debouncedScroll = debounce(updateActiveLink, 100);
+  window.addEventListener('scroll', debouncedScroll);
 
   // Run on page load to set the initial active link
   updateActiveLink();
 });
+
+// Add cleanup to prevent memory leaks
+window.removeEventListener('scroll', debouncedScroll);
+
+const SCROLL_THRESHOLD = 50;
+const SECTION_VISIBILITY_THRESHOLD = 0.1;
+const SCROLL_BEHAVIOR = 'smooth';
