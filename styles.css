@@ -52,21 +52,37 @@ body {
 }
 
 .logo img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     /* Slight zoom effect on hover */
 }
 
 /* Navigation Links */
 nav a {
+    position: relative;
     color: white;
-    /* White for contrast on black background */
     text-decoration: none;
     margin-left: 1.5rem;
     font-weight: 500;
     font-size: 1rem;
     letter-spacing: 0.10px;
-    position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a.active {
+    color: var(--accent-color); /* Highlight color for active link */
+}
+
+nav a.active::after, 
+nav a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* Full underline for active or hover */
+    height: 2px;
+    background: var(--accent-color); /* Matches the gold accent */
+    bottom: -4px;
+    left: 0;
+    transform: translateX(0);
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
@@ -82,38 +98,17 @@ nav a::after {
     position: absolute;
     width: 0;
     height: 2px;
-    background: var(--accent-color);
-    /* Matches the gold accent */
+    background: var(--accent-color); /* Matches the gold accent */
     bottom: -4px;
     left: 50%;
     transform: translateX(-50%);
     transition: width 0.3s ease;
 }
 
-nav a:hover::after {
-    width: 100%;
-    /* Expands underline on hover */
-}
 
-/* Add Button (optional) */
-.navbar .cta-button {
-    padding: 0.6rem 1.5rem;
-    margin-left: 1.5rem;
-    background: var(--accent-color);
-    /* Matches the logo accent */
-    color: black;
-    /* Contrast for visibility */
-    font-weight: 600;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
 
 .navbar .cta-button:hover {
-    background: white;
-    /* Inverts colors for hover effect */
+    background: white; /* Inverts colors for hover effect */
     color: rgb(0, 0, 0);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
