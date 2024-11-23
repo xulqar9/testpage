@@ -80,8 +80,7 @@ nav a.active,
 nav a:hover {
     color: var(--accent-color); /* Highlight color for active or hover */
 }
-
-nav a.active::after, 
+ 
 nav a:hover::after {
     content: '';
     position: absolute;
@@ -237,6 +236,36 @@ section {
   background-color: var(--accent-color);
   margin: 0.5rem auto;
   border-radius: 2px;
+}
+
+.team h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    /* Consistent font */
+    color: var(--primary-color);
+    /* Primary color for headings */
+    margin-bottom: 1.5rem;
+    /* Space below heading */
+    font-size: 2.5rem;
+    /* Increased font size for prominence */
+    position: relative;
+    /* For decorative underline */
+}
+
+.team h2::after {
+    content: '';
+    /* Decorative underline effect */
+    display: block;
+    width: 60px;
+    /* Underline width */
+    height: 4px;
+    /* Underline height */
+    background-color: var(--accent-color);
+    /* Use accent color */
+    margin: 0.5rem auto;
+    /* Center the underline */
+    border-radius: 2px;
+    /* Rounded corners for the underline */
 }
 
 .team-member {
@@ -496,6 +525,19 @@ section {
         font-size: 2rem; /* Smaller headings */
     }
 
+    .schedule h2{
+        font-size: 30px;
+    }
+    .price-list h2{
+        font-size: 30px;
+    }
+    .team h2{
+        font-size: 35px;
+    }
+    .about h2{
+        font-size: 35px;
+    }
+
     .team-member {
         flex-direction: column; /* Stack team members */
         gap: 10px;
@@ -516,6 +558,11 @@ section {
         font-size: 0.9rem; /* Adjust text size in lists and tables */
     }
 
+    .category th{
+        font-size: 10.5px;
+        padding: 10px;
+    }
+
     footer {
         font-size: 0.8rem; /* Reduce footer text size */
         padding: 0.5rem;
@@ -524,10 +571,20 @@ section {
 
 @media screen and (max-width: 483px) {
 
+    section h2{
+        font-size: 1px;
+    }
+
     nav a {
         font-size: 0.5rem; /* Reduce font size */
         margin-left: 0.5rem;
         margin-right: 0.5rem; /* Add breathing space for links */
+    }
+
+    .image-content img{
+        width: 45vh;
+        border-radius: 3%;
+        display : flex;
     }
 
     .hero h1 {
